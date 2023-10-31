@@ -22,7 +22,7 @@
         "php": "^7.0||^8.1",
         "zendframework/zend-mail": "^2.3",
         "symfony/options-resolver": "^3.3",
-        "psr/log": "^1.0",
+        "psr/log": "^3.0",
         "thefox/network": "^2.0"
     },
     "require-dev": {
