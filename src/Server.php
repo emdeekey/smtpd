@@ -19,8 +19,8 @@ use TheFox\Network\Socket;
 class Server extends Thread
 {
     use LoggerAwareTrait;
-    
-    const LOOP_USLEEP = 10000;
+
+    public const LOOP_USLEEP = 10000;
 
     /**
      * @var AbstractSocket
@@ -181,10 +181,10 @@ class Server extends Thread
 
         /** @var \resource[] $readHandles */
         $readHandles = [];
-        
+
         /** @var \resource[] $writeHandles */
         $writeHandles = [];
-        
+
         /** @var \resource[] $exceptHandles */
         $exceptHandles = [];
 
@@ -314,13 +314,12 @@ class Server extends Thread
         unset($this->clients[$clientsId]);
     }
 
-    /**
-     * @param Event $event
-     */
-    public function addEvent(Event $event)
+    public function addEvent(Event $event): static
     {
         $this->eventsId++;
         $this->events[$this->eventsId] = $event;
+
+        return $this;
     }
 
     /**
